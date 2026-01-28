@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Menu, Sun, Moon, X } from 'lucide-react';
 
 export default function Navbar({ darkMode, toggleDarkMode }) {
@@ -44,18 +44,18 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
 
   return (
     <div className='flex justify-center w-full fixed z-50 mt-4'>
-      <motion.nav initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}
+      <Motion.nav initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }}
         className={`flex items-center justify-center ${colors.navBg}
     backdrop-blur-lg rounded-2xl px-4 lg:px-8 py-2 shadow-lg`}>
 
         <div className='flex items-center justify-between w-full space-x-6 lg:space-x-8'>
           {/* LOGO SECTION */}
-          <motion.a href='/' whileHover={{ scale: 1.05 }}
+          <Motion.a href='/' whileHover={{ scale: 1.05 }}
             className='flex items-center space-x-2'>
             <span className={`text-xl font-bold ${colors.textPrimary}`}>
               PortFolio <span className='text-orange-500'>.</span>
             </span>
-          </motion.a>
+          </Motion.a>
 
           {/* NAVIGATION ITEMS */}
           <div className='hidden lg:flex items-center space-x-6'>
@@ -66,7 +66,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                   handleNavClick(item.name)
                 }}
                 className='relative' >
-                <motion.span
+                <Motion.span
                   className={`font-medium transition-colors duration-300
             ${activeSection === item.name.toLocaleLowerCase()
                       ? colors.textActive
@@ -75,9 +75,9 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}>
                   {item.name}
-                </motion.span>
+                </Motion.span>
                 {activeSection === item.name.toLocaleLowerCase() && (
-                  <motion.div
+                  <Motion.div
                     layout="navbar-indicator"
                     className={`absolute-bottom-1 left-0 right-0 h-0.5 bg-linear-to-r
                 rounded-full
@@ -85,7 +85,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                     }
                   >
 
-                  </motion.div>
+                  </Motion.div>
                 )}
               </a>
 
@@ -93,7 +93,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
           </div>
           <div className='flex items-center space-x-2'>
             {/* DARK/LIGHT MODE TOGGLE */}
-            <motion.button
+            <Motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleDarkMode}
@@ -107,9 +107,9 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
               }>
               {darkMode ? (<Sun className='w-5 h-5 text-yellow-300' />)
                 : (<Moon className='w-5 h-5 text-gray-700' />)}
-            </motion.button>
+            </Motion.button>
             {/* BUTTON */}
-            <motion.a href='#contact'
+            <Motion.a href='#contact'
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className={`hidden lg:block px-6 py-2 font-semibold rounded-full
@@ -117,11 +117,11 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
              text-white shadow-md hover:shadow-lg transition-shadow`}
             >
               Hire me
-            </motion.a>
+            </Motion.a>
           </div>
           {/* MOBILE MENU BUTTONS */}
           <div className='flex lg:hidden items-center space-x-4 px-2'>
-            <motion.button
+            <Motion.button
               whileTap={{ scale: 0.9 }}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className={`p-2 rounded-lg ${darkMode
@@ -133,11 +133,11 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
               ) : (
                 <Menu className={`w-5 h-5 ${darkMode ? 'text-white' : 'text-gray-700'}`} />
               )}
-            </motion.button>
+            </Motion.button>
           </div>
         </div>
         {isMenuOpen && (
-          <motion.div initial={{
+          <Motion.div initial={{
             opacity: 0, height: 0
           }}
             animate={{ opacity: 1, height: 'auto' }}
@@ -153,7 +153,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                   href={item.link}
                   onClick={() => handleNavClick(item.name)}
                   className='block'>
-                  <motion.div
+                  <Motion.div
                     whileHover={{ x: 5 }}
                     className={`py-3 px-4 rounded-lg text-center
   ${activeSection === item.name.toLowerCase()
@@ -166,22 +166,22 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                         }`}>
                       {item.name}
                     </span>
-                  </motion.div>
+                  </Motion.div>
                 </a>
               ))}
-              <motion.a
+              <Motion.a
               href='#contact'
               onClick={() => setIsMenuOpen(false)}
               whileTap={{scale:0.95}}
               className={`block py-3 px-4 text-center font-semibold rounded-lg bg-linear-to-r
               ${colors.button} text-white shadow-md`}>
                 Hire Me
-              </motion.a>
+              </Motion.a>
             </div>
 
-          </motion.div>
+          </Motion.div>
         )}
-      </motion.nav>
+      </Motion.nav>
     </div>
   )
 }
