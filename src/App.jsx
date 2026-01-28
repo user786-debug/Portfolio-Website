@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true)
+console.log("App Name from CI:", import.meta.env.VITE_APP_NAME);
 
 
   useEffect(() => {
