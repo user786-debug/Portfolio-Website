@@ -114,7 +114,7 @@ export default function Contact({ darkMode }) {
               }}
             />
 
-            {/* PHONE */}
+            {/* PHONE NUMBER*/}
             <input
               type="tel"
               placeholder="Phone Number"

@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true)
-console.log("App Name from CI:", import.meta.env.VITE_APP_NAME);
+  console.log("App Name from CI:", import.meta.env.VITE_APP_NAME);
 
 
   useEffect(() => {
@@ -22,10 +22,10 @@ console.log("App Name from CI:", import.meta.env.VITE_APP_NAME);
     })
     document.documentElement.classList.add('dark');
   }, [])
-
-useEffect(() => {
-  AOS.refresh()
-}, [darkMode])
+ 
+  useEffect(() => {
+    AOS.refresh()
+  }, [darkMode])
 
   const toggleDarkMode = () => {
     const newMode = !darkMode
@@ -36,16 +36,16 @@ useEffect(() => {
 
   return (
 
-    <div className={darkMode ? 
-    'bg-linear-to-br from-gray-900 via-[#0d182e] to-gray-900 min-h-screen' : 
-    'bg-linear-to-br  from-gray-50 to-blue-50 min-h-screen'}>
-      <Navbar darkMode = {darkMode} toggleDarkMode={toggleDarkMode}/>
-      <Hero darkMode = {darkMode} />
-      <About darkMode = {darkMode} />
-      <Skills darkMode = {darkMode} />
-      <Projects darkMode = {darkMode} />
-      <Contact darkMode = {darkMode} />
-      <Footer darkMode = {darkMode} />
+    <div className={darkMode ?
+      'bg-linear-to-br from-gray-900 via-[#0d182e] to-gray-900 min-h-screen' :
+      'bg-linear-to-br  from-gray-50 to-blue-50 min-h-screen'}>
+      <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+      <Hero darkMode={darkMode} />
+      <About darkMode={darkMode} />
+      <Skills darkMode={darkMode} />
+      <Projects darkMode={darkMode} />
+      <Contact darkMode={darkMode} />
+      <Footer darkMode={darkMode} />
     </div>
   )
 }
