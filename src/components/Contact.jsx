@@ -1,4 +1,3 @@
-import React from 'react'
 import contactImg from '../assets/contactImg.jpg'
 
 export default function Contact({ darkMode }) {
@@ -162,7 +161,7 @@ export default function Contact({ darkMode }) {
     </section>
   )
 }
-dbcad
+
 
 // import { section } from 'framer-motion/client'
 // import conatactImg from '../assets/contactImg.jpg'

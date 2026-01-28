@@ -1,4 +1,3 @@
-// import { Icon, instagram } from 'lucide-react'
 import instagram from '../assets/instagram.png'
 import tiktok from '../assets/tiktok.png'
 import github from '../assets/github.png'
@@ -6,8 +5,6 @@ import youtube from '../assets/youtube.png'
 import CV from '../assets/CV.pdf'
 import hero from '../assets/hero.png'
 import hi from '../assets/hi.png'
-import React from 'react'
-import { a } from 'framer-motion/client'
 import { DownloadIcon, Mail } from 'lucide-react'
 
 export default function Hero({ darkMode }) {

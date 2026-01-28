@@ -1,9 +1,7 @@
 
-import { color } from 'framer-motion'
 import laravel from '../assets/laravel.png'
 import react from '../assets/react.png'
 import tailwind from '../assets/tailwind.png'
-import { div } from 'framer-motion/client'
 
 
 export default function Skills({ darkMode }) {

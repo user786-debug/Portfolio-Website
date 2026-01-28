@@ -1,6 +1,5 @@
-import { section } from 'framer-motion/client'
-import React from 'react'
 import about from '../assets/about.jpg'
+
 export default function About({ darkMode }) {
     return (
         <section id='about' className={`min-h-screen overflow-hidden flex

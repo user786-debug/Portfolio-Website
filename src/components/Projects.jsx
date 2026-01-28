@@ -1,5 +1,3 @@
-import { div, section, title } from 'framer-motion/client'
-// import { FaGithub } from 'lucide-react'
 import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa'
 
 import project1 from '../assets/project1.jpg'
