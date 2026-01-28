@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: Build Job                  # ✅ ADD THIS
     runs-on: ubuntu-latest
 
     steps:
@@ -21,6 +22,9 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Lint project
+        run: npm run lint
 
       - name: Build project
         run: npm run build
