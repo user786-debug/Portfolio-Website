@@ -1,4 +1,3 @@
-
 import { FaGithub, FaLinkedin, FaTwitter, FaHeart } from 'react-icons/fa';
 
 export default function Footer({ darkMode }) {
