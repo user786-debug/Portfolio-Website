@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  build:
-    name: Build Job
+  ci:
+    name: CI - Lint & Build
     runs-on: ubuntu-latest
 
     steps:
@@ -20,7 +20,6 @@ jobs:
         with:
           node-version: 18
 
-      # ✅ CACHE STEP (FIXED & CORRECT PLACE)
       - name: Cache npm dependencies
         uses: actions/cache@v4
         with:
@@ -29,7 +28,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # ✅ USE npm ci FOR CI
       - name: Install dependencies
         run: npm ci
 
@@ -40,3 +38,20 @@ jobs:
         run: npm run build
         env:
           VITE_APP_NAME: ${{ secrets.VITE_APP_NAME }}
+
+  cd:
+    name: CD - Deploy to Vercel
+    runs-on: ubuntu-latest
+    needs: ci
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v23
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
