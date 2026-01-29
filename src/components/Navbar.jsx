@@ -162,7 +162,7 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                       }`}>
                     <span
                       className={`font-medium ${activeSection === item.name.toLowerCase()
-                          ? colors.textActive : colors.textSecondary
+                        ? colors.textActive : colors.textSecondary
                         }`}>
                       {item.name}
                     </span>
@@ -170,10 +170,10 @@ export default function Navbar({ darkMode, toggleDarkMode }) {
                 </a>
               ))}
               <Motion.a
-              href='#contact'
-              onClick={() => setIsMenuOpen(false)}
-              whileTap={{scale:0.95}}
-              className={`block py-3 px-4 text-center font-semibold rounded-lg bg-linear-to-r
+                href='#contact'
+                onClick={() => setIsMenuOpen(false)}
+                whileTap={{ scale: 0.95 }}
+                className={`block py-3 px-4 text-center font-semibold rounded-lg bg-linear-to-r
               ${colors.button} text-white shadow-md`}>
                 Hire Me
               </Motion.a>
