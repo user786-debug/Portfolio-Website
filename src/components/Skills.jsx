@@ -20,11 +20,11 @@ export default function Skills({ darkMode }) {
             color: 'from-teal-500 to-cyan-500'
         },
         {
-            name: 'Tailwind CSS', icon: tailwind, level: 75,
+            name: 'HTML', icon: tailwind, level: 75,
             color: 'from-teal-500 to-cyan-500'
         },
         {
-            name: 'Tailwind CSS', icon: tailwind, level: 75,
+            name: 'CSS', icon: tailwind, level: 75,
             color: 'from-teal-500 to-cyan-500'
         },
         {
