@@ -1,4 +1,4 @@
-name: CI - React Vite Build
+name: CI/CD - React Vite + Vercel
 
 on:
   push:
@@ -19,14 +19,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-
-      - name: Cache npm dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          cache: 'npm'   # 🚀 built-in cache (FASTER)
 
       - name: Install dependencies
         run: npm ci
@@ -42,14 +35,14 @@ jobs:
   cd:
     name: CD - Deploy to Vercel
     runs-on: ubuntu-latest
-    needs: ci
+    needs: ci   # 🔑 CD runs ONLY if CI passes
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Deploy to Vercel
-        uses: amondnet/vercel-action@v23
+      - name: Deploy to Vercel (Production)
+        uses: amondnet/vercel-action@latest
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
