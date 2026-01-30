@@ -12,7 +12,7 @@ This setup provides:
 - ESLint for code quality
 - Automated build, lint, and deployment pipeline
 
----
+
 
 ## 🔌 Available Plugins
 
