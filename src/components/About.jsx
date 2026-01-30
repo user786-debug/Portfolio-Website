@@ -13,7 +13,9 @@ export default function About({ darkMode }) {
                 order-2 lg:order-1'>
                     <div className='relative w-75 h-75 lg:w-96
                      lg:h-96'>
+
                         {/* IMAGE */}
+                        
                         <div className='absolute -inset-4 lg:-inset-20
                        bg-linear-to-l from-[#f97316] via-[#fb923c] 
                        to-[#f59e0b] rotate-12 star-shape z-0'
@@ -109,8 +111,8 @@ export default function About({ darkMode }) {
                                 rounded-full text-base sm:text-lg font-semibold transition-all
                                 duration-300 transform
                                 ${darkMode ? 'text-white bg-orange-500/10' : 'text-gray-800 bg-white/90'}`}
-                                data-aos='fade-up'
-                            data-aos-delay='800'>
+                        data-aos='fade-up'
+                        data-aos-delay='800'>
                         Learn More
                     </button>
                 </article>
